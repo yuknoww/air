@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비행기 움직이기</title>
+  <style>
+    /* 배경 스타일 */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('배경.gif'); /* 배경 이미지 경로 */
+      background-size: 60% 80%; /* 크기 설정 */
+      background-position: top center; /* 창 위쪽과 중앙으로 정렬 */
+      background-repeat: no-repeat;
+    }
+
+    /* 버튼 스타일 */
+    .button {
+      position: absolute;
+      bottom: 2%; /* 창 아래 중앙으로 정렬 */
+      left: 50%;
+      transform: translateX(-50%); /* 수평으로 중앙 정렬 */
+      width: 20%; /* 크기 설정 */
+      height: 20%; /* 크기 설정 */
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    /* 비행기 스타일 */
+    #비행기 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px; /* 비행기 이미지 크기 */
+      transition: all 0.5s ease; /* 부드러운 이동 */
+    }
+  </style>
+</head>
+<body>
+  <button id="게임시작">게임 시작</button>
+
+  <!-- 버튼 이미지 -->
+  <div>
+    <img id="버튼" src="버튼.png" alt="버튼" class="button">
+  </div>
+
+  <!-- 비행기 이미지 -->
+  <div>
+    <img id="비행기" src="비행기.png" alt="비행기">
+  </div>
+<script src="동작.js"></script>
