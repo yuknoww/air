@@ -131,14 +131,14 @@
   function startMissiles() {
     setInterval(() => {
       createMissile();
-    }, 500); // 0.5초마다 새로운 미사일 생성
+    }, 1000); // 1초마다 새로운 미사일 생성
   }
   
   function createMissile() {
     const missile = document.createElement("img");
     missile.src = "l.png"; // 미사일 이미지 경로
     missile.style.position = "absolute";
-    missile.style.width = "25px"; // 미사일 크기
+    missile.style.width = "30px"; // 미사일 크기
     missile.style.left = `${Math.random() * window.innerWidth}px`;
     missile.style.top = "0px"; // 화면 위에서 시작
     document.body.appendChild(missile);
