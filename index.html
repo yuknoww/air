@@ -54,12 +54,31 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 70px; /* 비행기 이미지 크기 */
+      width: 100px; /* 비행기 이미지 크기 */
       transition: all 0.5s ease; /* 부드러운 이동 */
     }
+
+
+    /* 전체 화면 버튼 스타일 */
+    #fullscreenButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+        }
+    
+    #fullscreenButton img {
+      width: 32px; /* 아이콘 너비 */
+      height: 32px; /* 아이콘 높이 */
+        }
   </style>
 </head>
 <body>
+  <button id="fullscreenButton" onclick="toggleFullscreen()">
+    <img src="fullscreen_icon_137565.png" alt="전체 화면">
+  </button>
   <p id="score">점수: 0</p>
   <button id="게임시작">게임 시작</button>
 
