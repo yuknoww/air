@@ -1,13 +1,23 @@
-  // 버튼과 비행기 이미지 가져오기
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+      console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+    });
+  } else {
+      document.exitFullscreen();
+  }
+} 
+ 
+ // 버튼과 비행기 이미지 가져오기
   const startButton = document.getElementById("게임시작");
   const moveButton = document.getElementById("버튼");
   const airplane = document.getElementById("비행기");
   
   // 상대적 좌표 (0~1 범위로 정의)
   const relativePositions = [
-    { x: 0.3, y: 0.4 }, // 첫 번째 좌표
-    { x: 0.5, y: 0.4 }, // 두 번째 좌표
-    { x: 0.7, y: 0.4 }  // 세 번째 좌표
+    { x: 0.254, y: 0.55 }, // 첫 번째 좌표
+    { x: 0.45, y: 0.55 }, // 두 번째 좌표
+    { x: 0.665, y: 0.55 }  // 세 번째 좌표
   ];
   
   // 현재 위치 인덱스와 이동 방향 (1: 순방향, -1: 역방향)
@@ -131,14 +141,14 @@
   function startMissiles() {
     setInterval(() => {
       createMissile();
-    }, 1000); // 1초마다 새로운 미사일 생성
+    }, 500); // 0.5초마다 새로운 미사일 생성
   }
   
   function createMissile() {
     const missile = document.createElement("img");
     missile.src = "l.png"; // 미사일 이미지 경로
     missile.style.position = "absolute";
-    missile.style.width = "30px"; // 미사일 크기
+    missile.style.width = "25px"; // 미사일 크기
     missile.style.left = `${Math.random() * window.innerWidth}px`;
     missile.style.top = "0px"; // 화면 위에서 시작
     document.body.appendChild(missile);
